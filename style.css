@@ -355,3 +355,85 @@ a:focus {
     transform: translateX(0);
   }
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* dvě vedle sebe */
+  gap: 1rem;                             /* mezery mezi obrázky */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;           /* nebo auto – podle potřeby */
+  object-fit: cover;       /* ořízne přebytek, zachová estetiku */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);  /* jemný hover efekt */
+}
+/* ===== Mobilní optimalizace ===== */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  #dark-mode-toggle {
+    align-self: flex-end;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  main {
+    margin: 1rem auto 2rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr; /* 1 obrázek na řádek */
+  }
+
+  .gallery-grid img {
+    height: auto;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
+  }
+}
+
