@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Děkuji | Ondřej Zábrodský</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <h1 class="logo">Ondřej Zábrodský</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">O mně</a></li>
+        <li><a href="zaliby.html">Záliby</a></li>
+        <li><a href="galerie.html">Fotogalerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Přepnout tmavý režim" title="Přepnout tmavý režim" class="dark-mode-btn">🌙</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="card">
+      <button class="dismiss" type="button" aria-label="Zavřít oznámení">×</button>
+      <div class="header">
+        <div class="div_image_v">
+          <div class="image">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <path d="M20 7L9 18L4 13" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div class="content">
+          <span class="title">Objednávka potvrzena</span>
+          <p class="message">Děkujeme za váš nákup. Balíček bude doručen do 2 dnů od objednávky.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Děkujeme za kontaktování</h2>
+    <p>Váš e-mail byl úspěšně odeslán. Ozveme se co nejdříve.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Ondřej Zábrodský. Všechna práva vyhrazena.
+  </footer>
+  <script src="dark-mode-toggle.js"></script>
+</body>
+</html>

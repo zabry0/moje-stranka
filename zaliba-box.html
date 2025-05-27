@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Box | Ondřej Zábrodský</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    article.card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 2rem auto;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+    body.dark-mode article.card {
+      background-color: #222;
+      color: #eee;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+    }
+    article.card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+      display: block;
+    }
+    article.card a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    body.dark-mode article.card a {
+      color: #66b0ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Ondřej Zábrodský</h1>
+      <ul>
+        <li><a href="index.html">O mně</a></li>
+        <li><a href="zaliby.html">Záliby</a></li>
+        <li><a href="galerie.html">Fotogalerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Přepnout tmavý režim" title="Přepnout tmavý režim">🌙</button>
+    </nav>
+  </header>
+  <main>
+    <h2>Box</h2>
+    <article class="card">
+      <p>Boxuji od svých 8 let. Tento sport mě naučil disciplíně, vytrvalosti a respektu k sobě i soupeři. Je to skvělý způsob, jak si udržet kondici a posilovat nejen tělo, ale i mysl.</p>
+      <img src="gervonta-davis.jpg" alt="Gervonta Davis" />
+      <h3>Gervonta Davis</h3>
+      <p>Gervonta Davis je americký profesionální boxer, známý svou neuvěřitelnou silou a rychlostí. Stal se více než jednou šampionem v lehké váze a je považován za jednoho z nejlepších mladých boxerů současnosti. Jeho agresivní styl a schopnost ukončit zápas KO dělají z jeho zápasů skutečnou podívanou.</p>
+      <p>Více o Gervontovi najdeš na jeho <a href="https://en.wikipedia.org/wiki/Gervonta_Davis" target="_blank" rel="noopener noreferrer">wikipedii</a> nebo na jeho <a href="https://www.instagram.com/gervontaa/" target="_blank" rel="noopener noreferrer">Instagramu</a>.</p>
+      <h4>Užitečné odkazy o boxu:</h4>
+      <ul>
+        <li><a href="https://www.boxingnews24.com/" target="_blank" rel="noopener noreferrer">Boxing News 24</a></li>
+        <li><a href="https://www.toprank.com/" target="_blank" rel="noopener noreferrer">Top Rank Boxing</a></li>
+        <li><a href="https://www.boxrec.com/" target="_blank" rel="noopener noreferrer">BoxRec - databáze boxerů</a></li>
+      </ul>
+    </article>
+  </main>
+  <footer>
+    &copy; 2025 Ondřej Zábrodský
+  </footer>
+  <script src="dark-mode-toggle.js"></script>
+</body>
+</html>
