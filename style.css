@@ -275,41 +275,110 @@ body.dark-mode .contact-info a {
 
 /* ===== Responsivita ===== */
 @media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-  
-  nav ul {
-    justify-content: center;
-    gap: 1rem;
+  /* Základní úpravy paddingu a marginu */
+  body {
+    padding: 0 0.8rem;
   }
 
   main {
-    margin: 1.5rem auto 3rem auto;
+    margin: 1rem auto 1.5rem auto;
+    padding: 0 0.3rem;
+  }
+
+  /* Navigace */
+  nav {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+
+  nav h1 {
+    font-size: 1.3rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  #dark-mode-toggle {
+    font-size: 1.8rem;
+    margin-left: 0;
+    align-self: flex-end;
+  }
+
+  /* Nadpisy */
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Galerie */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery-grid img:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  /* Karty a formulář */
+  .card {
+    padding: 1rem;
+    font-size: 0.95rem;
   }
 
   .contact-form {
-    padding: 1.2rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Patička */
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
   }
 }
 
+/* ===== Tmavý režim patičky pro mobil ===== */
 body.dark-mode footer {
-  background-color: #1f1f1f; /* tmavší pozadí pro patičku */
-  border-top-color: #444;    /* tmavší linka */
-  color: #ccc;               /* světlejší text */
+  background-color: #1f1f1f;
+  border-top-color: #444;
+  color: #ccc;
 }
 
 /* Odkazy */
 a {
-  color: #1e90ff; /* jasná modrá */
+  color: #1e90ff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover,
 a:focus {
-  color: #005bb5; /* tmavší modrá při hoveru/fokusu */
+  color: #005bb5;
   text-decoration: underline;
 }
 
@@ -318,7 +387,7 @@ a:focus {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #ff9800; /* oranžová */
+  background-color: #ff9800;
   color: white;
   padding: 15px 25px;
   border-radius: 8px;
@@ -355,85 +424,25 @@ a:focus {
     transform: translateX(0);
   }
 }
+
+/* Galerie grid pro desktop */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* dvě vedle sebe */
-  gap: 1rem;                             /* mezery mezi obrázky */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 250px;           /* nebo auto – podle potřeby */
-  object-fit: cover;       /* ořízne přebytek, zachová estetiku */
+  height: 250px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
 .gallery-grid img:hover {
-  transform: scale(1.03);  /* jemný hover efekt */
+  transform: scale(1.03);
 }
-/* ===== Mobilní optimalizace ===== */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    gap: 0.7rem;
-    align-items: flex-start;
-    padding: 0 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
-  }
-
-  #dark-mode-toggle {
-    align-self: flex-end;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  main {
-    margin: 1rem auto 2rem auto;
-    padding: 0 0.5rem;
-  }
-
-  .card {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .contact-form {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr; /* 1 obrázek na řádek */
-  }
-
-  .gallery-grid img {
-    height: auto;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 0.8rem 0;
-  }
-}
-
