@@ -6,8 +6,13 @@
   <title>Kontakt | Ondřej Zábrodský</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
+
 <body>
+  <!-- Kontejner pro pozadí -->
+  <div id="background-animation"></div>
+
   <header>
     <nav class="nav-container">
       <h1 class="logo">Ondřej Zábrodský</h1>
@@ -49,5 +54,38 @@
   </footer>
 
   <script src="dark-mode-toggle.js"></script>
-</body>
-</html>
+
+ <script>
+  const bg = document.getElementById("background-animation");
+
+  for (let i = 0; i < 25; i++) {
+    const bubble = document.createElement("div");
+    bubble.classList.add("message-bubble");
+
+    const width = Math.random() * 80 + 40;
+    const height = Math.random() * 30 + 20;
+
+    bubble.style.width = `${width}px`;
+    bubble.style.height = `${height}px`;
+    bubble.style.borderRadius = "20px";
+    bubble.style.background = `hsl(${Math.random() * 360}, 70%, 70%)`;
+    bubble.style.top = `${Math.random() * 100}%`;
+    bubble.style.left = `${Math.random() * 100}%`;
+    bubble.style.position = "absolute";
+    bubble.style.opacity = "0.6";
+
+    bg.appendChild(bubble);
+
+    anime({
+      targets: bubble,
+      translateY: [
+        { value: -80, duration: 2000 },
+        { value: 0, duration: 2000 }
+      ],
+      direction: 'alternate',
+      loop: true,
+      easing: 'easeInOutSine',
+      delay: Math.random() * 1000
+    });
+  }
+</script>
