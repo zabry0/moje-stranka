@@ -10,24 +10,32 @@
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 
   <style>
-    /* Pozadí s animací */
-    #background-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1; /* pod obsahem */
-      overflow: hidden;
-      background: #121212; /* můžeš změnit na světlou barvu podle potřeby */
-    }
-    .circle {
-      will-change: transform;
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-    }
-  </style>
+  /* Výchozí světlé pozadí */
+  #background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: #ffffff; /* SVĚTLÉ pozadí výchozí */
+    transition: background-color 0.5s ease;
+  }
+
+  /* Tmavý režim */
+  body.dark-mode #background-animation {
+    background: #121212; /* Tmavé pozadí */
+  }
+
+  .circle {
+    will-change: transform;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+</style>
 </head>
 <body>
   <!-- Div pro animované pozadí -->
