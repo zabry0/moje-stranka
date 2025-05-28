@@ -6,8 +6,33 @@
   <title>O mně | Ondřej Zábrodský</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Přidáme anime.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+  <style>
+    /* Pozadí s animací */
+    #background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* pod obsahem */
+      overflow: hidden;
+      background: #121212; /* můžeš změnit na světlou barvu podle potřeby */
+    }
+    .circle {
+      will-change: transform;
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
 <body>
+  <!-- Div pro animované pozadí -->
+  <div id="background-animation"></div>
+
   <header>
     <nav class="nav-container">
       <h1 class="logo">Ondřej Zábrodský</h1>
@@ -34,6 +59,33 @@
   <footer>
     &copy; 2025 Ondřej Zábrodský. Všechna práva vyhrazena.
   </footer>
+
   <script src="dark-mode-toggle.js"></script>
+<script>
+    const bg = document.getElementById("background-animation");
+
+    for (let i = 0; i < 25; i++) {
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      circle.style.width = circle.style.height = `${Math.random() * 60 + 20}px`;
+      circle.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      circle.style.top = `${Math.random() * 100}%`;
+      circle.style.left = `${Math.random() * 100}%`;
+
+      bg.appendChild(circle);
+
+      anime({
+        targets: circle,
+        translateY: [
+          { value: -100, duration: 2000 },
+          { value: 0, duration: 2000 }
+        ],
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine',
+        delay: Math.random() * 1000
+      });
+    }
+  </script>
 </body>
 </html>
