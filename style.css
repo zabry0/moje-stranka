@@ -423,3 +423,8 @@ body.dark-mode #background-animation {
     padding: 0.8rem 0;
   }
 }
+
+.highlight-link{
+  color: white;
+  text-decoration: none;
+}
